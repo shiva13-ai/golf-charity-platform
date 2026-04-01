@@ -186,7 +186,7 @@ export default function LandingPage() {
               { plan: 'Monthly', price: '£9.99', period: '/month', desc: 'Billed monthly. Cancel any time.', tag: null },
               { plan: 'Yearly', price: '£89.99', period: '/year', desc: 'Save £29.89 vs monthly billing.', tag: 'Best Value' },
             ].map(({ plan, price, period, desc, tag }) => (
-              <div key={plan} className={`glass-card rounded-2xl p-8 text-left relative ${tag ? 'ring-1' : ''}`} style={tag ? { ringColor: '#d4a82a', borderColor: 'rgba(212,168,42,0.4)' } : {}}>
+              <div key={plan} className={`glass-card rounded-2xl p-8 text-left relative ${tag ? 'ring-1 ring-[#d4a82a] border-[#d4a82a]/40' : ''}`}>
                 {tag && <div className="absolute -top-3 left-6 px-3 py-1 text-xs font-semibold rounded-full" style={{ background: '#d4a82a', color: '#0f0f0f' }}>{tag}</div>}
                 <div className="text-sm uppercase tracking-widest mb-4" style={{ color: '#d4a82a' }}>{plan}</div>
                 <div className="font-display text-5xl font-bold mb-1" style={{ color: '#f8f4e8' }}>{price}</div>
