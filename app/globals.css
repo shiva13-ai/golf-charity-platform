@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-dm-sans: 'DM Sans', system-ui, sans-serif;
+  --gold: #d4a82a;
+  --gold-light: #e8c44a;
+  --cream: #f8f4e8;
+  --charcoal: #0f0f0f;
+  --charcoal-800: #1a1a1a;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-dm-sans);
+  background: var(--charcoal);
+  color: var(--cream);
+  line-height: 1.6;
+}
+
+.font-display { font-family: var(--font-playfair); }
+
+/* Gold shimmer effect */
+.gold-shimmer {
+  background: linear-gradient(90deg, #d4a82a 0%, #f0d060 40%, #d4a82a 60%, #b8901a 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,168,42,0.15);
+  backdrop-filter: blur(12px);
+}
+
+/* Gold border button */
+.btn-gold {
+  background: linear-gradient(135deg, #d4a82a, #e8c44a);
+  color: #0f0f0f;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #e8c44a, #f0d060);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(212,168,42,0.3);
+}
+
+.btn-outline-gold {
+  border: 1px solid rgba(212,168,42,0.5);
+  color: #d4a82a;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+.btn-outline-gold:hover {
+  border-color: #d4a82a;
+  background: rgba(212,168,42,0.08);
+}
+
+/* Input style */
+.input-dark {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #f8f4e8;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  transition: border-color 0.2s;
+  font-family: var(--font-dm-sans);
+}
+.input-dark:focus {
+  outline: none;
+  border-color: rgba(212,168,42,0.6);
+  background: rgba(255,255,255,0.07);
+}
+.input-dark::placeholder { color: rgba(248,244,232,0.3); }
+
+/* Score badge */
+.score-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: var(--font-playfair);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
+::-webkit-scrollbar-thumb { background: rgba(212,168,42,0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212,168,42,0.6); }
+
+/* Stagger animations */
+[data-anim] { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+[data-anim].visible { opacity: 1; transform: translateY(0); }
